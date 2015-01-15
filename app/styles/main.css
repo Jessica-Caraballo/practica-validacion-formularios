@@ -27,3 +27,7 @@ body {
   color: #000;
   padding: 0.2em 0;
 }
+.important{color:red; font-weight:bold;}
+label{display:inline-block; width:200px;}
+input[type="submit"]{margin-left:200px;}
+.error{width:auto; color:red;font-size:small;}

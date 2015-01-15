@@ -16,20 +16,84 @@
     <!-- endbuild -->
   </head>
   <body>
-
-    <div class="hero-unit">
+	<div class="hero-unit">
       <h1>Práctica validación formularios</h1>
-      <p>Aquí debería ir el enlace a <a href="https://github.com/juanda99/practica-validacion-formularios">tu respositorio en GitHub</a>, donde estará la versión de desarrollo.</p>
+        <form id="formulario" novalidate action="" method="post">
+        <fieldset><legend>Información de Contacto:</legend>
+        <!--
+		    Nombre*
+		    Apellidos*
+		    Teléfono*
+		    email*
+		    repetir email
+		    ¿Cómo nos has conocido? (Prefiero no contestar, Publicidad, Profesionales del sector, Internet, A través de un amigo o conocido )
+		-->
+            <div>
+                <label for="nombre">Nombre:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="nombre" name="nombre" />
+            </div>
+            <div>
+                <label for="apellidos">Nombre:
+                    <span class="important">*</span>
+                </label>
+                <input type="text" id="apellidos" name="apellidos" />
+            </div>
+            <div>
+	            <label for="telefono" id="ltelefono">Teléfono
+	            		<span class="important">*</span>
+	            </label>
+	            <input type="text" name="telefono" maxlength="9" value="" id="telefono" />
+	        </div>
+            <div>
+                <label for="email">E-mail:
+                    <span class="important">*</span>
+                </label>
+                <input type="email" id="email" name="email" />
+            </div>
+            <div>
+                <label for="url">Url:</label>
+                <input type="url" id="url" name="url" />
+            </div>
+            <div>
+                <label for="comentarios">Comentarios:</label>
+                <textarea id="comentarios" name="comentarios"></textarea>
+            </div></fieldset>
+            <!--Datos de acceso:
+			  	usuario*
+			    contraseña*
+			    repetir contraseña-->
+            <!--Datos de facturación
+			    Demandante (Particular o Empresa)*
+			    CIF/NIF*
+			    Nombre/Empresa*
+			    Dirección*
+			    CP*
+			    Localidad*
+			    Provincia*
+			    País*
+			    Código IBAN*
+			    Forma de pago: Mensual, Trimestral, Anual*-->
+            <div>
+                <input type="submit" value="Enviar" />
+            </div>
+        </form>      
+      <p>Enlace a <a href="https://github.com/Jessica-Caraballo/practica-validacion-formularios"> mi respositorio en GitHub</a>, donde está la versión de desarrollo.</p>
     </div>
-
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <script src="../bower_components/jquery-validate/dist/jquery.validate.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({app,.tmp}) scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <!-- endbuild -->
+
+    <!-- build:js({app,.tmp}) scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/localization.js"></script>
+    <script src="scripts/iban.js"></script>
+    <!-- endbuild -->
 </body>
 </html>
