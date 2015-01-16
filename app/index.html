@@ -21,7 +21,7 @@
 
 	<form id="formulario" novalidate action="" method="post">
 		<div id="contenedor">    
-			<fieldset><legend>Información de Contacto:</legend>
+			<fieldset><legend><strong>Información de Contacto:</strong></legend>
 		    	<div id="contacto">        
 		            <div>
 		                <label for="nombre">Nombre:
@@ -36,27 +36,27 @@
 		                <input type="text" id="apellidos" name="apellidos" />
 		            </div>
 		            <div>
-			            <label for="telefono" id="ltelefono">Teléfono:
+			            <label for="telefono">Teléfono:
 			            		<span class="important">*</span>
 			            </label>
-			            <input type="text" name="telefono" maxlength="9" value="" id="telefono" />
+			            <input type="text" name="telefono" maxlength="9" value="" id="telefono" placeholder="976108672"/>
 			        </div>
 		            <div>
 		                <label for="email">E-mail:
 		                    <span class="important">*</span>
 		                </label>
-		                <input type="email" id="email" name="email" />
+		                <input type="email" id="email" name="email" placeholder="mi_email@ejemplo.com"  />
 		            </div>
 		            <div>
 		                <label for="email2">Repetir e-mail:</label>
 		                <input type="email" id="email2" name="email2" />
 		            </div>
 		            <div>
-		            	<label for="conocer">¿Cómo nos ha conocido? 
+		            	<label for="conocer">¿Cómo nos conoció? 
 		            		<span class="important">*</span>
 		            	</label>
 		            	<select name="conocer" id="conocer">
-							<option value="-1" selected="selected">Seleccione una opción</option>
+							<option value="" selected="selected">Seleccione una opción</option>
 							<option value="1">Prefiero no contestar</option>
 							<option value="2">Publicidad</option>
 							<option value="3">Profesionales del sector</option>
@@ -68,13 +68,13 @@
 		     </fieldset>
 		    
 			
-		    <fieldset><legend>Datos de acceso:</legend>
+		    <fieldset><legend><strong>Datos de acceso:</strong></legend>
 		    	<div id="datos_acceso">
 		            <div>
 		                <label for="usuario">Usuario:
 		                    <span class="important">*</span>
 		                </label>
-		                <input type="text" id="usuario" name="usuario" />
+		                <input type="text" id="usuario" name="usuario" value="<?php $row['nombre']?>"/>
 		            </div>
 		            <div>
 		                <label for="passsword">Contraseña:
@@ -89,9 +89,9 @@
 		        </div>
 		    </fieldset>        
 		            
-			<fieldset><legend>Datos de facturación:</legend>
+			<fieldset><legend><strong>Datos de facturación:</strong></legend>
 				<div id="datos_facturacion">	
-					<div class="radioCheck">Demandante:
+					<!--<div class="radioCheck">Demandante:
 			            <label for="demandanteparticular">
 			                <input type="radio" name="demandante" value="0" id="demandanteparticular" checked="checked" />
 			                Particular
@@ -101,28 +101,31 @@
 			                Empresa
 			            </label>
 			        </div>
+
 					<div class="clr"><hr /></div>
+
 			        <div>
 			            <label for="nif" id="lblnif">NIF:
-			                <span class="required">*</span>
+			                <span class="important">*</span>
 			                <input type="text" name="nif" value="" id="nif" class="large required" />
 			            </label>
 			        
 			            <label for="particular" id="lblparticular">Nombre:
-			            	<span class="required">*</span>
+			            	<span class="important">*</span>
 			            	<input type="text" name="particular" value="" id="particular" class="large required" />
 			            </label>
 			        </div>
+
 			        <div>
 						<label for="cif" class="respuesta" id="lblcif">CIF:    
-						    <span class="required">*</span>
+						    <span class="important"></span>
 						     <input type="text" name="cif" value="" id="cif"  class="large required" disabled="disabled" />
 						</label>
 						<label for="empresa" class="respuesta" id="lblempresa">Empresa:    
-						    <span class="required">*</span>
+						    <span class="important"></span>
 						    <input type="text" name="empresa" value="" id="empresa"  class="large required" disabled="disabled" />
 						</label>
-				    </div>
+				    </div><br/>-->
 
 					<div>
 			            <label for="direccion">Dirección:
@@ -138,68 +141,7 @@
 			            	<input type="text" id="cp" name="cp"/>
 			        </div>
 
-			        <div>
-			            <label for="provincia">Provincia
-			                <span class="important">*</span>
-			            </label>
-		                <select name="provincia" id="addr_0610">
-							<option value="-1">Seleccione una opción</option>
-		                    <option value="1">Alava</option>
-		                    <option value="2">Albacete</option>
-		                    <option value="3">Alicante</option>
-		                    <option value="4">Almería</option>
-		                    <option value="33">Asturias</option>
-		                    <option value="5">Ávila</option>
-		                    <option value="6">Badajoz</option>
-		                    <option value="7">Baleares</option>
-		                    <option value="8">Barcelona</option>
-		                    <option value="9">Burgos</option>
-		                    <option value="10">Caceres</option>
-		                    <option value="11">Cádiz</option>
-		                    <option value="39">Cantabria</option>
-		                    <option value="12">Castellón</option>
-		                    <option value="51">Ceuta</option>
-		                    <option value="13">Ciudad Real</option>
-		                    <option value="14">Cordoba</option>
-		                    <option value="16">Cuenca</option>
-		                    <option value="17">Gerona</option>
-		                    <option value="18">Granada</option>
-		                    <option value="19">Guadalajara</option>
-		                    <option value="20">Guipuzcoa</option>
-		                    <option value="21">Huelva</option>
-		                    <option value="22">Huesca</option>
-		                    <option value="23">Jaén</option>
-		                    <option value="15">La Coruña</option>
-		                    <option value="26">La Rioja</option>
-		                    <option value="35">Las Palmas</option>
-		                    <option value="24">León</option>
-		                    <option value="25">Lérida</option>
-		                    <option value="27">Lugo</option>
-		                    <option value="28">Madrid</option>
-		                    <option value="29">Málaga</option>
-		                    <option value="52">Melilla</option>
-		                    <option value="30">Murcia</option>
-		                    <option value="31">Navarra</option>
-		                    <option value="32">Orense</option>
-		                    <option value="34">Palencia</option>
-		                    <option value="36">Pontevedra</option>
-		                    <option value="37">Salamanca</option>
-		                    <option value="38">Santa Cruz de Tenerife</option>
-		                    <option value="40">Segovia</option>
-		                    <option value="41">Sevilla</option>
-		                    <option value="42">Soria</option>
-		                    <option value="43">Tarragona</option>
-		                    <option value="44">Teruel</option>
-		                    <option value="45">Toledo</option>
-		                    <option value="46">Valencia</option>
-		                    <option value="47">Valladolid</option>
-		                    <option value="48">Vizcaya</option>
-		                    <option value="49">Zamora</option>
-		                    <option value="50">Zaragoza</option>
-		                </select>
-		            </div>
-					
-					<div>
+					<!--<div>
 				        <label for="pais">País
 				            <span class="important">*</span>
 				        </label>
@@ -265,7 +207,7 @@
 			                <option value="ER/0/1">Eritrea</option>
 			                <option value="SK/0/1">Eslovaquia</option>
 			                <option value="SI/0/1">Eslovenia</option>
-			                <option value="ES/0/0" selected="selected">España</option>
+			                <option value="ES/0/0">España</option>
 			                <option value="EE/0/1">Estonia</option>
 			                <option value="ET/0/1">Etiopía</option>
 			                <option value="PH/0/1">Filipinas</option>
@@ -452,7 +394,75 @@
 			                <option value="ZM/0/1">Zambia</option>
 			                <option value="ZW/0/1">Zimbabue</option>
 			            </select>
-				    </div>
+				    </div>-->
+
+				    <div>
+			            <label for="provincia">Provincia
+			                <span class="important">*</span>
+			            </label>
+		                <select name="provincia" id="addr_0610">
+							<option value="">Seleccione una opción</option>
+		                    <option value="1">Alava</option>
+		                    <option value="2">Albacete</option>
+		                    <option value="3">Alicante</option>
+		                    <option value="4">Almería</option>
+		                    <option value="33">Asturias</option>
+		                    <option value="5">Ávila</option>
+		                    <option value="6">Badajoz</option>
+		                    <option value="7">Baleares</option>
+		                    <option value="8">Barcelona</option>
+		                    <option value="9">Burgos</option>
+		                    <option value="10">Caceres</option>
+		                    <option value="11">Cádiz</option>
+		                    <option value="39">Cantabria</option>
+		                    <option value="12">Castellón</option>
+		                    <option value="51">Ceuta</option>
+		                    <option value="13">Ciudad Real</option>
+		                    <option value="14">Cordoba</option>
+		                    <option value="16">Cuenca</option>
+		                    <option value="17">Gerona</option>
+		                    <option value="18">Granada</option>
+		                    <option value="19">Guadalajara</option>
+		                    <option value="20">Guipuzcoa</option>
+		                    <option value="21">Huelva</option>
+		                    <option value="22">Huesca</option>
+		                    <option value="23">Jaén</option>
+		                    <option value="15">La Coruña</option>
+		                    <option value="26">La Rioja</option>
+		                    <option value="35">Las Palmas</option>
+		                    <option value="24">León</option>
+		                    <option value="25">Lérida</option>
+		                    <option value="27">Lugo</option>
+		                    <option value="28">Madrid</option>
+		                    <option value="29">Málaga</option>
+		                    <option value="52">Melilla</option>
+		                    <option value="30">Murcia</option>
+		                    <option value="31">Navarra</option>
+		                    <option value="32">Orense</option>
+		                    <option value="34">Palencia</option>
+		                    <option value="36">Pontevedra</option>
+		                    <option value="37">Salamanca</option>
+		                    <option value="38">Santa Cruz de Tenerife</option>
+		                    <option value="40">Segovia</option>
+		                    <option value="41">Sevilla</option>
+		                    <option value="42">Soria</option>
+		                    <option value="43">Tarragona</option>
+		                    <option value="44">Teruel</option>
+		                    <option value="45">Toledo</option>
+		                    <option value="46">Valencia</option>
+		                    <option value="47">Valladolid</option>
+		                    <option value="48">Vizcaya</option>
+		                    <option value="49">Zamora</option>
+		                    <option value="50">Zaragoza</option>
+		                </select>
+		            </div>
+
+		            <div>
+			            <label for="localidad">Localidad:
+			            	<span class="important">*</span>
+			            </label>
+			            	<input type="text" id="localidad" name="localidad"/>
+			        </div>
 				    <div>
 			            <label for="iban">IBAN:
 			            	<span class="important">*</span>
@@ -464,7 +474,7 @@
 		            		<span class="important">*</span>
 		            	</label>
 		            	<select name="pago" id="pago">
-							<option value="-1" selected="selected">Seleccione una opción</option>
+							<option value="" selected="selected">Seleccione una opción</option>
 							<option value="1">Mensual</option>
 							<option value="2">Trimestral</option>
 							<option value="3">Anual</option>
