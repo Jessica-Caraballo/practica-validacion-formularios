@@ -1,50 +1,52 @@
 <?php
-/* Descomentaríamos la siguiente línea para mostrar errores de php en el fichero: */
-// ini_set('display_errors', '1');
-/* Definimos los parámetros de conexión con la bbdd: */
+// Datos de conexion para la base de datos
 $dbinfo = "mysql:dbname=xxxx;host=localhost";
 $user = "yyyyy";
 $pass = "zzzzz";
-//Nos intentamos conectar:
-try {
-    /* conectamos con bbdd e inicializamos conexión como UTF8 */
+// Intenta conectar:
+try 
+{
+    // Conecta con bbdd e inicializa la conexión como UTF8
     $db = new PDO($dbinfo, $user, $pass);
     $db->exec('SET CHARACTER SET utf8');
 } catch (Exception $e) {
     echo "La conexi&oacute;n ha fallado: " . $e->getMessage();
 }
-/* Para hacer debug cargaríamos a mano el parámetro, descomentaríamos la siguiente línea: */
-//$_REQUEST['zip'] = "12";
-if (isset($_POST['zip'])) {
-    /* La línea siguiente la podemos descomentar para ver desde firebug-xhr si se pasa bien el parámetro desde el formulario */
-    //echo $_REQUEST['email'];
-    if (strlen($_POST['zip']) >= 2){
-	    $zip = substr($_POST['zip'], 0, 2);
+
+// Si recibe una variable CP
+if (isset($_REQUEST['cp']))
+{
+    /// Si su longuitud es mayor o igual a 2, selecciona los 2 primeros caracteres en cp
+    if (strlen($_REQUEST['cp']) >= 2)
+    {
+	    $cp = substr($_REQUEST['cp'], 0, 2);
     } else {
-	    $zip = $_POST['zip'];
+        // Sino asigna directamente el valor a la variable cp   
+	    $cp = $_REQUEST['cp'];
     }
-    $sql = $db->prepare("SELECT Provincia FROM t_provincias WHERE CodProv=?");
-    $sql->bindParam(1, $zip, PDO::PARAM_STR);
+
+ // Prepara y lanza la consulta   
+    $sql = $db->prepare("SELECT t_provincias FROM provincias WHERE CodProv=?");
+    //$resultado->execute($cp);
+    $sql->bindParam(1, $cp, PDO::PARAM_STR);
     $sql->execute();
-    /* Ojo... PDOStatement::rowCount() devuelve el número de filas afectadas por la última sentencia DELETE, INSERT, o UPDATE 
-     * ejecutada por el correspondiente objeto PDOStatement.Si la última sentencia SQL ejecutada por el objeto PDOStatement 
-     * asociado fue una sentencia SELECT, algunas bases de datos podrían devolver el número de filas devuelto por dicha sentencia. 
-     * Sin embargo, este comportamiento no está garantizado para todas las bases de datos y no debería confiarse en él para 
-     * aplicaciones portables.
-     */
-    $valid = 'true'; 
+
+    // Declara una variable para almacer si todo fue bien o no, y lo comprueba
+    $valid;
     if ($sql->rowCount() > 0) {
-        $valid= 'false';
+        $valid= 'true';
     } else {
-       $valid='true';
+       $valid='false';
     }
+
+    // Recorre la consulta
+    $okey = $sql->fetch();       
     
-    
-	$okey = $sql->fetch();    
-    
-    
-}
+    //Devuelve el resultado de la provincia con ese CP
+    echo $valid;
+
+// Libera recursos (BBDD y consulta)
 $sql=null;
-$db = null;
-echo $okey[0];
+$db=null;
+}
 ?>
