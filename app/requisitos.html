@@ -1,0 +1,103 @@
+<article class="markdown-body entry-content" itemprop="mainContentOfPage"><h1>
+<a id="user-content-práctica-validación-de-formularios" class="anchor" href="#pr%C3%A1ctica-validaci%C3%B3n-de-formularios" aria-hidden="true"><span class="octicon octicon-link"></span></a>Práctica Validación de Formularios</h1>
+
+<p>Se realiza una página web para una empresa que vende servicios de Internet a otras compañías.
+La empresa nos solicita un un formulario de contacto en el que recogeremos no sólo los datos de contacto, sino también los datos para facturación o acceso por Internet.</p>
+
+<!--<p><strong>Información de Contacto:</strong></p>
+
+<ul class="task-list">
+<li>Nombre*<br>
+</li>
+<li>Apellidos*<br>
+</li>
+<li>Teléfono*</li>
+<li>email*<br>
+</li>
+<li>repetir email<br>
+</li>
+<li>¿Cómo nos has conocido? (Prefiero no contestar, Publicidad, Profesionales del sector, Internet, A través de un amigo o conocido )</li>
+</ul>
+
+<p><strong>Datos de facturación:</strong></p>
+
+<ul class="task-list">
+<li>Demandante (Particular o Empresa)*</li>
+<li>CIF/NIF*</li>
+<li>Nombre/Empresa*</li>
+<li>Dirección*</li>
+<li>CP*</li>
+<li>Localidad*</li>
+<li>Provincia*</li>
+<li>País*</li>
+<li>Código IBAN*<br>
+</li>
+<li>Forma de pago: Mensual, Trimestral, Anual*<br>
+</li>
+</ul>
+
+<p><strong>Datos de acceso:</strong></p>
+
+<ul class="task-list">
+<li>usuario*<br>
+</li>
+<li>contraseña*<br>
+</li>
+<li>repetir contraseña<br>
+</li>
+</ul>
+-->
+<p><strong>Validaciones y comportamiento del formulario:</strong>
+Debemos hacer las siguientes validaciones en cliente antes de hacer el envío del formulario:</p>
+
+<ul class="task-list">
+<!--<li>Todos los campos con * son requeridos </li>-->
+<!--<li>Comprobaremos que el usuario no exista previamente en la bbdd (NIF o email, el CIF no es necesario).</li>-->
+<!--<li>Teléfono contendrá solo dígitos y un total de 9.<br></li>-->
+<!--<li>CP tendrán que ser 5 digitos. Si son menos se completará con 0 a la izquierda.</li>-->
+<!--<li>email debe ser un correo electrónico válido (al menos en apariencia)</li>-->
+<!--<li>Por defecto estará marcado como demandante Particular y como Nombre (apartado Datos de facturación) la combinación de los campos Nombre y Apellidos de la información de contacto. Si el usuario selecciona como demandante Empresa, se borrará el contenido del campo “Nombre”, que pasará a llamarse “Empresa” para que el usuario lo rellene.<br>
+</li>-->
+<!--<li>Los campos CIF/NIF y Nombre/Empresa adecuarán su label en función del demandante seleccionado.</li>-->
+<!--<li>Una vez insertado el código postal, se debe seleccionar la provincia y la localidad de forma automática. La localidad se rellenará con criterio libre.</li>-->
+<!--<li>El código IBAN debe ser válido.</li>-->
+<!--<li>El usuario debe tener al menos 4 caracteres, se rellenará de modo automático    con el correo electrónico y no podrá ser modificado.</li>-->
+<!--<li>La contraseña se debe forzar a que sea compleja.</li>-->
+<!--<li>Una vez pulsemos enviar en el formulario se mostrará un aviso al usuario de que se va a dar de alta y que se le pasará la primera cuota de 50€, 140€ o 550€ según corresponda (forma de pago). El usuario podrá cancelar la operación.</li>-->
+</ul>
+
+<p><strong>Datos de test:</strong></p>
+
+<ul class="task-list">
+<!--<li>El usuario con email <a href="mailto:juandacorreo@gmail.com">juandacorreo@gmail.com</a> y DNI 25456737S deberá estar dado de alta en la base de datos. </li>
+<li>El CIF que probaré es el siguiente: A28017895 (El Corte Inglés).</li>
+<li>El código IBAN: ES91 2085 0166 69 0330150871</li>-->
+</ul>
+
+<p><strong>Requerimientos adicionales:</strong></p>
+
+<ul class="task-list">
+<!--<li>
+<p>Uso de al menos un plugin adicional, por ejemplo:</p>
+
+<ul class="task-list">
+<li>jquery Complexify para la complejidad de la contraseña.</li>
+<li>
+<a href="http://harvesthq.github.io/chosen/">http://harvesthq.github.io/chosen/</a> para los select</li>
+</ul>
+</li>-->
+<li><p>Diseño <strong>css propio o basado en un framework css</strong> tipo Bootstrap o Foundation (nada de “reciclar” el de la práctica demo).  Si utilizas Bootstrap y no lo conoces, puedes apoyarte en <a href="http://bootsnipp.com/forms">bootsnipp</a>.</p></li>
+<li><p>La práctica se debe colgar en github y debe partir de un fork de mi repositorio, para su seguimiento por mi parte. De cualquier manera en vuestro formulario deberá haber un enlace visible a vuestro repositorio en GitHub. Serán necesarios <strong>al menos 5 commits en 3 días diferentes</strong>.</p></li>
+<li><p>El código html, css y js deberá ir en sus propios ficheros. Se debe disponer de <strong>dos versiones del código, una de desarrollo y otra de producción</strong> que tendrá todos los ficheros minified y concatenados, de modo que haya un único js para todo el código que no sea nuestro (jQuery, Validate…), un único css para todo el código que no sea nuestro (Bootstrap por ej.), y un único css o js para el código que hayamos hecho nosotros. Para realizar todo este proceso  y por temas de productividad y eficiencia <strong>se recomienda encarecidamente el uso de Yeoman</strong>. Para facilitar y "forzar" a ello, ya os proporciono la estructura de la aplicación con Yeoman (yo webapp). En infenlaces.com se colgará exclusivamente el código de producción de modo que pueda llegar al mismo navegando a partir de la <a href="http://www.infenlaces.com">lista de usuarios</a>.</p></li>
+</ul>
+
+<p><strong>Ayuda</strong>:</p>
+
+<ul class="task-list">
+<li>Para la validación te puedes ayudar de la práctica solucionada de validación que os proporcioné.</li>
+<li>
+<a href="http://git-scm.com/book/es/v1">Capítulo I y II del libro Pro git</a>, para entender el control de versiones git (aunque tan solo serán necesarios 4 o 5 comandos, viene bien para entender lo que hacemos).</li>
+<li>
+<a href="http://www.formandome.es/varios/yeoman-automatizar-el-flujo-de-trabajo-en-desarrollo-web/">Artículo sobre uso de Yeoman</a>, donde además utilizo jQuery Validate.</li>
+</ul>
+</article>

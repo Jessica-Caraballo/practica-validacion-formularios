@@ -1,14 +1,15 @@
 <?php
-// Datos de conexion para la base de datos
+// Datos de conexion para mi base de datos
 $dbinfo = "mysql:dbname=practica_validacion;host=localhost";
 $user = "root";
-$pass = "root";
+$pass = "jessi";
 
 // Intenta conectar
 try 
 {
-    // Conecta a la BBDD 
+    // Conecta con la BBDD 
     $db = new PDO($dbinfo, $user, $pass);
+
     // Inicializa la conexion como utf8 para que coja correctamente caracteres españoles como la ñ
     $db->exec('SET CHARACTER SET utf8');
 } catch (Exception $e) {
@@ -18,7 +19,7 @@ try
 // Si recibe una variable CP
 if (isset($_REQUEST['cp'])) 
 {
-    // Si su longuitud es mayor o igual a 2, selecciona los 2 primeros caracteres en cp
+    // Si su longuitud es mayor o igual a 2, coge los 2 primeros caracteres en la variable cp
     if (strlen($_REQUEST['cp']) >= 2)
     {
         $cp = substr($_REQUEST['cp'], 0, 2);
@@ -27,12 +28,13 @@ if (isset($_REQUEST['cp']))
         $cp = $_REQUEST['cp'];
     }
 
-     // Prepara y lanza la consulta   
-    $sql = $db->prepare("SELECT t_municipios FROM municipios WHERE CodProv=?");
+    // Prepara y lanza la consulta   
+    $sql = $db->prepare("SELECT t_provincias FROM provincias WHERE CodProv=?");
+    //$resultado->execute($cp);
     $sql->bindParam(1, $cp, PDO::PARAM_STR);
     $sql->execute();
 
-    // Declara una variable para almacer si todo fue bien o no, y lo comprueba
+    // Declara una variable para almacer si todo fue bien o no, y lo comprobamos asignado
     $valid;
     if ($sql->rowCount() > 0) 
     {
@@ -41,11 +43,11 @@ if (isset($_REQUEST['cp']))
        $valid='false';
     }
 
-    // Recorre la consulta 
-    while($okey = $sql->fetch())
-    {
-        echo '<option value="'.$okey[0].'">' . $okey[0] . "</option>";
-    }
+    // Recorre la consulta
+    $okey = $sql->fetch();       
+    
+    //Devuelve el resultado de la provincia con ese CP
+    echo $valid;
 
 // Libera recursos (BBDD y consulta)
 $sql=null;

@@ -1,3 +1,5 @@
+//El código IBAN debe ser válido
+
 $.validator.addMethod("iban", function(value, element) {
     // some quick simple tests to prevent needless work
     if (this.optional(element)) {
@@ -119,4 +121,4 @@ $.validator.addMethod("iban", function(value, element) {
         cRest = cOperator % 97;
     }
     return cRest === 1;
-}, "Por favor, escribe una IBAN válido.");
+}, "Por favor, escriba una IBAN válido.");

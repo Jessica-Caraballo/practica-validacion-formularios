@@ -1,80 +1,92 @@
-#contenedor {
-          background: #FFF;
-          border: 1px solid silver;
-          margin: 1em auto;
-          padding: 1em;
-          
-        }
+.demandante{  font-weight: bold;}
 
-fieldset {
+.important{ color:red;  font-weight:bold; }
+
+label{ display:inline-block;  width:200px;  }
+
+.seleccionar{ width:100px;  }
+
+input[type="submit"]{ margin-left:200px;  }
+
+.error{ width:auto; color:red;  font-size:small;  }
+
+#pie{ clear:both;}
+
+select{  width: 230px;  }
+
+#contenedor 
+{
+  background: #FFF;
+  border: 1px solid silver;
+  margin: 1em auto;
+  padding: 1em;          
+}
+
+fieldset 
+{
   background-color: pink;
   float: left;
-  width: 550px;
+  width: 500px;
   margin-right: 15px;
   margin-left: 10px;
 }
 
-.important{color:red; font-weight:bold;}
-label{display:inline-block; width:200px;}
-input[type="submit"]{margin-left:200px;}
-.error{width:auto; color:red;font-size:small;}
-
-#pie{
-  clear:both;
-}
-/*#contacto{
-  float: left;
-  width:200px;
-  margin-left: 10px;
-}
-#datos{
-  width:200px;
-  margin-left: 10px;
+input
+{
+  height: 22px;
+  width: 230px;
+  border:1px orange;  
+  border-radius:10px;/*borde redondeado*/  
+  border-left: 4px solid purple;  /*mas ancho*/  
+  background-color : #F5A9A9;/*fondo*/
+  padding: 6px 6px 6px 22px;
 }
 
-*{
-  margin:0px;
-  padding:0px;
+input:focus 
+{
+  border:1px solid #b9d4e9;
+  border-top-color:#b6d5ea;
+  border-bottom-color:#b8d4ea;
+  box-shadow:0 0 5px #b9d4e9;
 }
-body {
-  background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #333;
 
-}
-.hero-unit {
-  margin: 50px auto 50px auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-}
-.hero-unit h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-#contenedor{
-  float: left;
-  width: 100%; 
-}
-#contacto{
-  position: absolute;
-  display: block;
-  float:left;
-  width:30%;
-  margin-left: -200px;
-  float:left;
-  width:400px;
-}
-#datos{
-  float:left;
-  width:30%;
-  margin-left:400px;
-  float: right;
-  margin-left: 410px;
-}*/
+/*Placeholder*/
+::-webkit-input-placeholder { color:#BE81F7; }
 
+::-moz-placeholder { color:p#BE81F7; } /* firefox 19+ */
+
+:-ms-input-placeholder { color:#BE81F7; } /* ie */
+
+input:-moz-placeholder { color:#BE81F7; }
+
+/*Requisitos password*/
+.erroneo
+{
+  background:url(mal.png) no-repeat 0 50%;
+  padding-left:25px;
+  line-height:14px;
+  color:#ec3f41;
+}
+
+.valido 
+{
+  background:url(bien.png) no-repeat 0 50%;
+  padding-left:25px;
+  line-height:14px;
+  color:#3a7d34;
+} 
+
+#pswd_info 
+{
+  position: center;
+  top:230px;
+  right:55px;
+  width:250px;
+  padding:15px;
+  background:#FFF;
+  font-size:.875em;
+  border-radius:5px;
+  box-shadow:0 1px 3px #ccc;
+  border:1px solid #ddd;
+  display: none;
+} 

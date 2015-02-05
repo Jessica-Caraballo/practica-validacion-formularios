@@ -13,16 +13,17 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
-	<link rel="stylesheet" href="scripts/chosen.css">    
+	<link rel="stylesheet" href="scripts/chosen.css">
     <!-- endbuild -->
   </head>
 
   <body>
   <h1>Práctica validación formularios</h1>
-
 	<form id="formulario" novalidate action="" method="post">
 		<div id="contenedor">    
-			<fieldset><legend><strong>Información de Contacto:</strong></legend>
+			<fieldset>
+				<legend><strong>Información de Contacto:</strong></legend>
+
 		    	<div id="contacto">        
 		            <div>
 		                <label for="nombre">Nombre:
@@ -30,30 +31,33 @@
 		                </label>
 		                <input type="text" id="nombre" name="nombre" placeholder="Juan" />
 		            </div>
+
 		            <div>
 		                <label for="apellidos">Apellidos:
 		                    <span class="important">*</span>
 		                </label>
 		                <input type="text" id="apellidos" name="apellidos" placeholder="Nadie Nadie" />
 		            </div>
+
 		            <div>
 			            <label for="telefono">Teléfono:
 			            		<span class="important">*</span>
 			            </label>
-			            <input type="text" name="telefono" maxlength="9" value="" id="telefono" placeholder="976108672"/>
+			            <input type="text" name="telefono" maxlength="9" value="" id="telefono" placeholder="976581470"/>
 			        </div>
+
 		            <div>
-		                <label for="email">E-mail:
+		                <label for="email">Email:
 		                    <span class="important">*</span>
 		                </label>
-		                <input type="email" id="email" name="email" placeholder="mi_email@ejemplo.com"  />
+		                <input type="email" id="email" name="email" placeholder="mi_email@algo.com"  />
 		            </div>
 		            <div>
-		                <label for="email2">Repetir e-mail:</label>
-		                <input type="email" id="email2" name="email2" placeholder="mi_email@ejemplo.com" />
+		                <label for="email2">Repetir email:</label>
+		                <input type="email" id="email2" name="email2" placeholder="mi_email@algo.com" />
 		            </div>
 		            <div>
-		            	<label for="conocer">¿Cómo nos conoció?</label>
+		            	<label for="conocer">¿Cómo nos ha conocido?</label>
 		            	<select name="conocer" id="conocer" data-placeholder="Seleccione una opcion" size="0">
 							<option value="" disabled selected="selected"></option>
 							<option value="1">Prefiero no contestar</option>
@@ -67,39 +71,59 @@
 		     </fieldset>
 		    
 			
-		    <fieldset><legend><strong>Datos de acceso:</strong></legend>
+		    <fieldset>
+		    	<legend><strong>Datos de acceso:</strong></legend>
+
 		    	<div id="datos_acceso">
 		            <div>
 		                <label for="usuario">Usuario:
 		                    <span class="important">*</span>
 		                </label>
 		                <input type="text" id="usuario" name="usuario" value=""/>
-		            </div>
-		            <div>
-		                <label for="passsword">Contraseña:
-		                    <span class="important">*</span>
-		                </label>
-		                <input type="password" id="password" name="password" />
-		            </div>
-		            <div>
-		                <label for="passsword2">Repetir contraseña:</label>
-		                <input type="password" id="password2" name="password2" />
-		            </div>
-		        </div>
-		    </fieldset>        
-		            
-			<fieldset><legend><strong>Datos de facturación:</strong></legend>
-				<div id="datos_facturacion">	
+		            </div> 
+		           					
+					<div>
+						<label for="pswd">Contraseña:
+							<span class="important">*</span>
+						</label>
+						<input id="pswd" type="password" name="pswd" placeholder="Asdf1245"/>
+					</div>
+
+					<div>
+			            <label for="pswd2">Repetir contraseña:
+							<span class="important">*</span>
+			            </label>
+			            <input type="password" id="pswd2" name="pswd2" />			           
+			        </div>				
 				
-					<div class="radioCheck">Demandante:
-			            <label for="demandanteparticular">
+					<div id="pswd_info">
+							<h4>Su contraseña debe cumplir los siguientes requisitos:</h4>
+							<ol>
+								<li id="letra" class="erroneo">Al menos <strong>una letra</strong></li>
+								<li id="mayuscula" class="erroneo">Al menos <strong>una letra mayúscula</strong></li>
+								<li id="numero" class="erroneo">Al menos <strong>un número</strong></li>
+								<li id="longitud" class="erroneo">Poseer mínimo <strong>8 carcteres</strong></li>
+							</ol>
+					</div>
+				</div>		
+			</fieldset>        
+		            
+			<fieldset>
+				<legend><strong>Datos de facturación:</strong></legend>
+
+				<div id="datos_facturacion">
+
+				<span class="demandante">Demandante:</span>	
+					<div class="radioCheck">
+			            <label for="demandanteparticular" >
+			            		<!--Por defecto esta marcado como demandante Particular-->
 			                <input type="radio" name="demandante" value="0" id="demandanteparticular" checked="checked" />
-			                Particular
+			                <span class="seleccionar">Particular</span>
 			            </label>
 
-			            <label for="demandanteempresa">
+			            <label for="demandanteempresa" class="seleccionar">
 			                <input type="radio" name="demandante" value="1" id="demandanteempresa" />
-			                Empresa
+			                <span class="seleccionar">Empresa</span>
 			            </label>
 			        </div>
 
@@ -127,16 +151,17 @@
 			        </div>
 
 			        <div>
-			            <label for="cp">CP:
+			            <label for="cp">Código Postal:
 			            	<span class="important">*</span>
 			            </label>
 			            	<input type="text" id="cp" name="cp"/>
 			        </div>
 
 				    <div>
-			            <label for="provincia">Provincia
+			            <label for="provincia">Provincia:
 			                <span class="important">*</span>
 			            </label>
+
 		                <select name="provincia" id="provincia" data-placeholder="Seleccione una provincia">
 							<option value="" disabled selected="selected"></option>
 		                    <option value="1">Alava</option>
@@ -198,21 +223,18 @@
 			            <label for="localidad">Localidad:
 			            	<span class="important">*</span>
 			            </label>
-			            	<!--<input type="text" id="localidad" name="localidad"/>-->
-			            	<select name="localidad" id="localidad" data-placeholder="Seleccione una localidad">
-							<!--<option value="" disabled selected="selected"></option>-->
-			            	</select>
+			            	<select name="localidad" id="localidad" data-placeholder="Seleccione una provincia" />
 			        </div>
 
 				    <div>
-			            <label for="iban">IBAN:
+			            <label for="iban">Código IBAN:
 			            	<span class="important">*</span>
 			            </label>
 			            	<input type="text" id="iban" name="iban" />
 			        </div>
 
 			        <div>
-		            	<label for="pago">Forma de pago
+		            	<label for="pago">Forma de pago:
 		            		<span class="important">*</span>
 		            	</label>
 		            	<select name="pago" id="pago" data-placeholder="Seleccione una cuota">
@@ -246,9 +268,8 @@
     <!-- build:js({app,.tmp}) scripts/main.js -->
     <script src="scripts/main.js"></script>
     <script src="scripts/localization.js"></script>
-    <script src="scripts/iban.js"></script>
-    <script src="scripts/validacion.js"></script>    
-    <script src="scripts/chosen.jquery.js"></script>    
+    <script src="scripts/iban.js"></script> 
+    <script src="scripts/chosen.jquery.js"></script>
     <!-- endbuild -->
 
 	</body>

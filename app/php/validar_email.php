@@ -1,32 +1,34 @@
 <?php
-// Descomentaría la siguiente línea para mostrar errores de php en el fichero:
-    // ini_set('display_errors', '1');
-// Define los parámetros de conexión con la bbdd:
-$dbinfo = "mysql:dbname=xxxx;host=localhost";
-$user = "yyyyy";
-$pass = "zzzzz";
+// Datos de conexion para mi base de datos
+$dbinfo = "mysql:dbname=practica_validacion;host=localhost";
+$user = "root";
+$pass = "jessi";
 
-// Intenta conectar:
+// Intenta conectar
 try 
 {
-    // Conecta con bbdd e inicializamos conexión como UTF8
+     // Conecta con la BBDD 
     $db = new PDO($dbinfo, $user, $pass);
+
+    // Inicializa la conexion como utf8 para que coja correctamente caracteres españoles como la ñ
     $db->exec('SET CHARACTER SET utf8');
 } catch (Exception $e) {
     echo "La conexi&oacute;n ha fallado: " . $e->getMessage();
 }
-// Para hacer debug, cargaría a mano el parámetro, descomentaría la siguiente línea:
-    //$_REQUEST['email'] = "pepito@hotmail.com";
+
+// Si recibe una variable CP
 if (isset($_REQUEST['email'])) 
 {
-    // Guarda el email
+    // Guarda en una variable el email
     $email = $_REQUEST['email'];
+
     //Prepara y lanza la consulta
     $sql = $db->prepare("SELECT * FROM usuarios WHERE email=?");
     $sql->bindParam(1, $email, PDO::PARAM_STR); 
     $sql->execute();
-    // Declara variable para almacer si ha funcionado bien o no
-    $valid = 'true';
+
+    // Declara una variable para almacer si todo fue bien o no, y lo comprueba asignado
+    $valid;
     if ($sql->rowCount() > 0) 
     {
         $valid= 'false';
@@ -34,6 +36,7 @@ if (isset($_REQUEST['email']))
        $valid='true';
     }
 }
+
 // Devuelve el resultado de la busqueda, finalmente si existe dara error
 echo $valid;
 
