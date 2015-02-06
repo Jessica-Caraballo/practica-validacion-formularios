@@ -1,0 +1,90 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'grunt-time',
+1 verbose cli   '--save' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.36
+4 verbose node symlink /usr/bin/node
+5 warn package.json practica-validacion-formularios@ No repository field.
+6 verbose readDependencies using package.json deps
+7 verbose cache add [ 'grunt-time', null ]
+8 verbose cache add name=undefined spec="grunt-time" args=["grunt-time",null]
+9 verbose parsed url { protocol: null,
+9 verbose parsed url   slashes: null,
+9 verbose parsed url   auth: null,
+9 verbose parsed url   host: null,
+9 verbose parsed url   port: null,
+9 verbose parsed url   hostname: null,
+9 verbose parsed url   hash: null,
+9 verbose parsed url   search: null,
+9 verbose parsed url   query: null,
+9 verbose parsed url   pathname: 'grunt-time',
+9 verbose parsed url   path: 'grunt-time',
+9 verbose parsed url   href: 'grunt-time' }
+10 silly lockFile a893dbb1-grunt-time grunt-time
+11 verbose lock grunt-time /home/jessi/.npm/a893dbb1-grunt-time.lock
+12 silly lockFile a893dbb1-grunt-time grunt-time
+13 silly lockFile a893dbb1-grunt-time grunt-time
+14 verbose addNamed [ 'grunt-time', '' ]
+15 verbose addNamed [ null, '*' ]
+16 silly lockFile e01c7731-grunt-time grunt-time@
+17 verbose lock grunt-time@ /home/jessi/.npm/e01c7731-grunt-time.lock
+18 silly addNameRange { name: 'grunt-time', range: '*', hasData: false }
+19 verbose request where is /grunt-time
+20 verbose request registry https://registry.npmjs.org/
+21 verbose request id ac4ee54486a416ba
+22 verbose url raw /grunt-time
+23 verbose url resolving [ 'https://registry.npmjs.org/', './grunt-time' ]
+24 verbose url resolved https://registry.npmjs.org/grunt-time
+25 verbose request where is https://registry.npmjs.org/grunt-time
+26 info trying registry request attempt 1 at 12:02:37
+27 http GET https://registry.npmjs.org/grunt-time
+28 http 404 https://registry.npmjs.org/grunt-time
+29 verbose headers { date: 'Fri, 06 Feb 2015 11:02:43 GMT',
+29 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+29 verbose headers   'content-type': 'application/json',
+29 verbose headers   'cache-control': 'max-age=0',
+29 verbose headers   'content-length': '52',
+29 verbose headers   'accept-ranges': 'bytes',
+29 verbose headers   via: '1.1 varnish',
+29 verbose headers   age: '0',
+29 verbose headers   'x-served-by': 'cache-ams4148-AMS',
+29 verbose headers   'x-cache': 'MISS',
+29 verbose headers   'x-cache-hits': '0',
+29 verbose headers   'x-timer': 'S1423220563.070646,VS0,VE97',
+29 verbose headers   'keep-alive': 'timeout=10, max=50',
+29 verbose headers   connection: 'Keep-Alive' }
+30 silly registry.get cb [ 404,
+30 silly registry.get   { date: 'Fri, 06 Feb 2015 11:02:43 GMT',
+30 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+30 silly registry.get     'content-type': 'application/json',
+30 silly registry.get     'cache-control': 'max-age=0',
+30 silly registry.get     'content-length': '52',
+30 silly registry.get     'accept-ranges': 'bytes',
+30 silly registry.get     via: '1.1 varnish',
+30 silly registry.get     age: '0',
+30 silly registry.get     'x-served-by': 'cache-ams4148-AMS',
+30 silly registry.get     'x-cache': 'MISS',
+30 silly registry.get     'x-cache-hits': '0',
+30 silly registry.get     'x-timer': 'S1423220563.070646,VS0,VE97',
+30 silly registry.get     'keep-alive': 'timeout=10, max=50',
+30 silly registry.get     connection: 'Keep-Alive' } ]
+31 silly lockFile e01c7731-grunt-time grunt-time@
+32 silly lockFile e01c7731-grunt-time grunt-time@
+33 error 404 404 Not Found: grunt-time
+33 error 404
+33 error 404 'grunt-time' is not in the npm registry.
+33 error 404 You should bug the author to publish it
+33 error 404 It was specified as a dependency of 'practica-validacion-formularios'
+33 error 404
+33 error 404 Note that you can also install from a
+33 error 404 tarball, folder, or http url, or git url.
+34 error System Linux 3.13.0-45-generic
+35 error command "/usr/bin/node" "/usr/bin/npm" "install" "grunt-time" "--save"
+36 error cwd /var/www/practica-validacion-formularios
+37 error node -v v0.10.36
+38 error npm -v 1.4.28
+39 error code E404
+40 verbose exit [ 1, true ]
