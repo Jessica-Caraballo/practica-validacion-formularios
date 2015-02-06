@@ -5,6 +5,8 @@
     <title>Práctica validación formularios</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
     <link rel="shortcut icon" href="../faviconjessi.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
@@ -18,43 +20,47 @@
   </head>
 
   <body>
-  <h1>Práctica validación formularios</h1>
+    <h1 id="formulariocontacto">
+    	<span class="purple_b">Formulario</span>
+    	<span class="purple">De</span>
+    	<span class="purple_w">Contacto</span>
+	</h1>
+
 	<form id="formulario" novalidate action="" method="post">
-		<div id="contenedor">    
+		<!--<div id="contenedor">  -->  
 			<fieldset>
 				<legend><strong>Información de Contacto:</strong></legend>
-
 		    	<div id="contacto">        
 		            <div>
-		                <label for="nombre">Nombre:
+		                <label for="nombre">
+		                	<span id="nombre">Nombre:</span>	
 		                    <span class="important">*</span>
+		                    <input class="text" type="text" id="nombre" name="nombre" placeholder="Jessica"/>
 		                </label>
-		                <input type="text" id="nombre" name="nombre" placeholder="Juan" />
-		            </div>
-
-		            <div>
-		                <label for="apellidos">Apellidos:
+		            
+		                <label for="apellidos">
+		                	<span id="apellidos">Apellidos:</span>	
 		                    <span class="important">*</span>
-		                </label>
-		                <input type="text" id="apellidos" name="apellidos" placeholder="Nadie Nadie" />
+		                    <input class="text" type="text" id="apellidos" name="apellidos" placeholder="Caraballo Silgado" />
+		                </label>		                
 		            </div>
 
 		            <div>
 			            <label for="telefono">Teléfono:
 			            		<span class="important">*</span>
 			            </label>
-			            <input type="text" name="telefono" maxlength="9" value="" id="telefono" placeholder="976581470"/>
+			            <input class="text" type="text" name="telefono" maxlength="9" value="" id="telefono" placeholder="976300804"/>
 			        </div>
 
 		            <div>
 		                <label for="email">Email:
 		                    <span class="important">*</span>
 		                </label>
-		                <input type="email" id="email" name="email" placeholder="mi_email@algo.com"  />
+		                <input class="text" type="email" id="email" name="email" placeholder="mi_email@algo.com"  />
 		            </div>
 		            <div>
 		                <label for="email2">Repetir email:</label>
-		                <input type="email" id="email2" name="email2" placeholder="mi_email@algo.com" />
+		                <input class="text" type="email" id="email2" name="email2" placeholder="mi_email@algo.com" />
 		            </div>
 		            <div>
 		            	<label for="conocer">¿Cómo nos ha conocido?</label>
@@ -72,28 +78,28 @@
 		    
 			
 		    <fieldset>
-		    	<legend><strong>Datos de acceso:</strong></legend>
+		    	<legend><strong>Datos de Acceso:</strong></legend>
 
 		    	<div id="datos_acceso">
 		            <div>
 		                <label for="usuario">Usuario:
 		                    <span class="important">*</span>
 		                </label>
-		                <input type="text" id="usuario" name="usuario" value=""/>
+		                <input class="text" type="text" id="usuario" name="usuario" value="" placeholder="Nombre de su usuario"/>
 		            </div> 
 		           					
 					<div>
-						<label for="pswd">Contraseña:
-							<span class="important">*</span>
+						<label for="pswd">
+							<span id="pswd">Contraseña:</span>
+							<span class="important">*</span>						
+							<input class="text" id="pswd" type="password" name="pswd" placeholder="Asdf1245"/>
 						</label>
-						<input id="pswd" type="password" name="pswd" placeholder="Asdf1245"/>
-					</div>
 
-					<div>
-			            <label for="pswd2">Repetir contraseña:
+			            <label for="pswd2">
+			            	<span id="pswdw">Repita su contraseña:</span>
 							<span class="important">*</span>
-			            </label>
-			            <input type="password" id="pswd2" name="pswd2" />			           
+			            	<input class="text" type="password" id="pswd2" name="pswd2" placeholder="Asdf1245"/>			
+		            	</label>           
 			        </div>				
 				
 					<div id="pswd_info">
@@ -109,20 +115,20 @@
 			</fieldset>        
 		            
 			<fieldset>
-				<legend><strong>Datos de facturación:</strong></legend>
+				<legend><strong>Datos de Facturación:</strong></legend>
 
 				<div id="datos_facturacion">
 
-				<span class="demandante">Demandante:</span>	
+				<span class="demandante">|  Demandante  | </span>	
 					<div class="radioCheck">
 			            <label for="demandanteparticular" >
 			            		<!--Por defecto esta marcado como demandante Particular-->
-			                <input type="radio" name="demandante" value="0" id="demandanteparticular" checked="checked" />
+			                <input class="text" type="radio" name="demandante" value="0" id="demandanteparticular" checked="checked" />
 			                <span class="seleccionar">Particular</span>
 			            </label>
 
 			            <label for="demandanteempresa" class="seleccionar">
-			                <input type="radio" name="demandante" value="1" id="demandanteempresa" />
+			                <input class="text" type="radio" name="demandante" value="1" id="demandanteempresa" / >
 			                <span class="seleccionar">Empresa</span>
 			            </label>
 			        </div>
@@ -133,13 +139,13 @@
 			            <label for="nifcif" id="lblnif">
 			            	<span id="textonifcif">NIF:</span>			            	
 			                <span class="important">*</span>
-			                <input type="text" name="nifcif" value="" id="nifcif"/>
+			                <input class="text" type="text" name="nifcif" value="" id="nifcif" placeholder="NIF ó CIF"/>
 			            </label>
 			        
 			            <label for="particularempresa" id="lblparticular">
 			            	<span id="textoparticularempresa">Nombre:</span>			
 			            	<span class="important">*</span>
-			            	<input type="text" name="particularempresa" value="" id="particularempresa" />
+			            	<input class="text" type="text" name="particularempresa" value="" id="particularempresa" placeholder="Nombre ó empresa"/>
 			            </label>
 			        </div>
 
@@ -147,14 +153,14 @@
 			            <label for="direccion">Dirección:
 			            	<span class="important">*</span>
 			            </label>
-			            	<input type="text" id="direccion" name="direccion"/>
+			            	<input class="text" type="text" id="direccion" name="direccion" placeholder="C/ Jarque Moncayo"/>
 			        </div>
 
 			        <div>
 			            <label for="cp">Código Postal:
 			            	<span class="important">*</span>
 			            </label>
-			            	<input type="text" id="cp" name="cp"/>
+			            	<input class="text" type="text" id="cp" name="cp" placeholder="50012"/>
 			        </div>
 
 				    <div>
@@ -223,14 +229,14 @@
 			            <label for="localidad">Localidad:
 			            	<span class="important">*</span>
 			            </label>
-			            	<select name="localidad" id="localidad" data-placeholder="Seleccione una provincia" />
+			            	<select name="localidad" id="localidad" data-placeholder="Seleccione una provincia"></select>
 			        </div>
 
 				    <div>
 			            <label for="iban">Código IBAN:
 			            	<span class="important">*</span>
 			            </label>
-			            	<input type="text" id="iban" name="iban" />
+			            	<input class="text" type="text" id="iban" name="iban" placeholder="ES9120850166690330150871"/>
 			        </div>
 
 			        <div>
@@ -250,12 +256,14 @@
 		    <div id="pie">
 		        <input type="submit" value="Enviar" />
 		    </div>
-		</div>            
+		<!--</div>   -->         
 	</form>       
 
-	<div>
-		<p>Enlace a <a href="https://github.com/Jessica-Caraballo/practica-validacion-formularios" target="_blank"> mi respositorio en GitHub</a>, donde está la versión de desarrollo.</p>
-	</div>
+	<!--
+		<div>
+			<p>Enlace a <a href="https://github.com/Jessica-Caraballo/practica-validacion-formularios" target="_blank"> mi respositorio en GitHub</a>, donde está la versión de desarrollo.</p>
+		</div>
+	-->
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->

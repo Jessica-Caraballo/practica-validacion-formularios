@@ -1,12 +1,27 @@
-.demandante{  font-weight: bold;}
+/* Imagenes en input */
+input#nombre, input#apellidos {  background: url("../images/user4.png") no-repeat scroll 0 0 transparent; }
+input#particularempresa, input#nifcif, input#cp {  background: url("../images/pencil43.png") no-repeat scroll 0 0 transparent; }
+input#telefono{ background: url("../images/call5.png") no-repeat scroll 0 0 transparent; }
+input#email, input#email2{  background: url("../images/email.png") no-repeat scroll 0 0 transparent; }
+input#pswd, input#pswd2{  background: url("../images/key162.png") no-repeat scroll 0 0 transparent; }
+input#usuario{  background: url("../images/user157.png") no-repeat scroll 0 0 transparent; }
+input#direccion{  background: url("../images/home168.png") no-repeat scroll 0 0 transparent; }
+input#iban{  background: url("../images/payment.png") no-repeat scroll 0 0 transparent; }
+h1{ padding-left: 150px;  }
+
+body{
+    font-family: 'Vollkorn', serif;
+    margin: 2% 5% 5%;    
+    background-color: black;
+}
+
+.demandante{  font-style: italic;}
 
 .important{ color:red;  font-weight:bold; }
 
-label{ display:inline-block;  width:200px;  }
+label{   display:inline-block; width:200px;  }
 
 .seleccionar{ width:100px;  }
-
-input[type="submit"]{ margin-left:200px;  }
 
 .error{ width:auto; color:red;  font-size:small;  }
 
@@ -14,68 +29,103 @@ input[type="submit"]{ margin-left:200px;  }
 
 select{  width: 230px;  }
 
-#contenedor 
+div { padding: 4px; }
+
+#formulario 
 {
-  background: #FFF;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2),  
+              0 1px 1px rgba(0, 0, 0, .2),
+              0 3px 0 #fff,
+              0 4px 0 rgba(0, 0, 0, .2),
+              0 6px 0 #fff,  
+              0 7px 0 rgba(0, 0, 0, .2);
+  background: #9F81F7;
   border: 1px solid silver;
-  margin: 1em auto;
-  padding: 1em;          
+  /*margin: 1em auto;*/
+  /*padding: 1em;  */   
+  width: 95%; 
+  margin: 3px 3px 3px 3px;
+  padding: 25px;
+  border-radius: 50px;    
 }
 
-fieldset 
+ .text
 {
-  background-color: pink;
-  float: left;
-  width: 500px;
-  margin-right: 15px;
-  margin-left: 10px;
-}
-
-input
-{
-  height: 22px;
+  height: 20px;
   width: 230px;
-  border:1px orange;  
-  border-radius:10px;/*borde redondeado*/  
+  border:10px orange; 
+  border-radius:15px;/*borde redondeado*/  
   border-left: 4px solid purple;  /*mas ancho*/  
-  background-color : #F5A9A9;/*fondo*/
-  padding: 6px 6px 6px 22px;
+  border-bottom: 1px solid purple;
+  background-color : #F8EFFB;/*fondo*/
+  padding: 10px 6px 6px 22px;
+  text-align: right;
+}
+#nifcif, #nombre, #pswd, #pswd2{
+  width: 150px;
+}
+#particularempresa, #apellidos{
+  width: 200px;
+}
+#direccion, #iban{
+  width: 320px;
 }
 
 input:focus 
 {
-  border:1px solid #b9d4e9;
-  border-top-color:#b6d5ea;
-  border-bottom-color:#b8d4ea;
-  box-shadow:0 0 5px #b9d4e9;
+  border:1px solid #DF01A5;
+  border-top-color:#DF01A5;
+  border-bottom-color:#DF01A5;
+  box-shadow:0 0 10px #DF01A5;
+  padding-left:35px;
+}
+
+/*  Boton de Enviar: */
+input[type="submit"]
+{ 
+  background-color: #5F04B4;
+  color: white;
+  border-bottom: 2px solid #9A2EFE;
+  border-radius: 25px; 
+  margin-left: 40%;
+  width: 300px;
+  height: 50px;
+  font-weight: bold;
+}
+input[type="submit"]:focus, input[type="submit"]:hover
+{ 
+  background-color:#F8E0F7;
+  color: black;
+  border-bottom: 2px solid #9A2EFE;
+  border-radius: 25px; 
+  margin-left: 40%;
+  width: 300px;
+  height: 50px;
+  font-weight: bold;
 }
 
 /*Placeholder*/
-::-webkit-input-placeholder { color:#BE81F7; }
-
-::-moz-placeholder { color:p#BE81F7; } /* firefox 19+ */
-
-:-ms-input-placeholder { color:#BE81F7; } /* ie */
-
-input:-moz-placeholder { color:#BE81F7; }
+/* all */
+::-webkit-input-placeholder { color:#5F04B4; }
+::-moz-placeholder { color:#5F04B4; } /* firefox 19+ */
+:-ms-input-placeholder { color:#5F04B4; } /* ie */
+input:-moz-placeholder { color:#5F04B4; }
 
 /*Requisitos password*/
 .erroneo
 {
-  background:url(mal.png) no-repeat 0 50%;
+  background:url(../images/mal.png) no-repeat 0 50%;
   padding-left:25px;
   line-height:14px;
   color:#ec3f41;
 }
-
 .valido 
 {
-  background:url(bien.png) no-repeat 0 50%;
+  background:url(../images/bien.png) no-repeat 0 50%;
   padding-left:25px;
   line-height:14px;
   color:#3a7d34;
 } 
-
 #pswd_info 
 {
   position: center;
@@ -89,4 +139,38 @@ input:-moz-placeholder { color:#BE81F7; }
   box-shadow:0 1px 3px #ccc;
   border:1px solid #ddd;
   display: none;
-} 
+}
+
+fieldset 
+{
+  background-color: #F8E0F7;
+  float: left;
+  width: 450px;
+  margin-right: 15px;
+  margin-left: 10px;
+}
+fieldset:hover
+{
+  background-color:#F5A9E1;
+}
+legend{
+  font-size: 25px;
+  font-family: 'Pacifico', cursive;
+}
+
+/*Titulo: Validacion de formulario*/
+.purple_b {
+    font-family: 'Pacifico', cursive;
+    color: #4B088A;
+    font-size: 40px;
+}
+.purple {
+    font-family: 'Pacifico', cursive;
+    color: #8000FF;
+    font-size: 30px;
+}
+.purple_w{
+    font-family: 'Pacifico', cursive;
+    color: #BE81F7;
+    font-size: 20px;
+}
